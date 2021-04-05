@@ -3,6 +3,9 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 
+const PORT = 3000;
+const HOST = '0.0.0.0';
+
 const fn = function thuthlyArguments(a,b,c,d){
     let truthyObject = []
     const final = fn.toString()
@@ -43,5 +46,5 @@ app.get('/reverse/:str',(req,res)=>{
     return res.json(reverseString(str))
 })
 
-
-app.listen(3000,()=>console.log('Listening on port',3000))
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
